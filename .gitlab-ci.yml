@@ -1,0 +1,9 @@
+variables:
+  TEST_1:  smoke-test1
+  TEST_2:  smoke-test
+FB_tests:
+  image:
+    name: testcafe/testcafe
+    entrypoint: ["/bin/sh", "-c"]
+  script:
+    - /opt/testcafe/docker/testcafe-docker.sh firefox:headless Tests/** --test-meta group="$TEST_1"
